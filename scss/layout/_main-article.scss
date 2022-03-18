@@ -1,0 +1,39 @@
+//Layout and spacing of main article on landing page
+.main-article {
+  height: 90rem;
+  margin-top: -7rem;
+  padding-top: 10rem;
+  position: relative;
+  text-align: center;
+  z-index: -1;
+
+  /* Styling and positioning the two blocks of text that makes up the main article of the landing page */
+  .article-block {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.466),
+        rgba(255, 255, 255, 0.808)
+      ),
+      url('../images/backgrounds/2052200141.jpg');
+    background-position: center;
+    box-shadow: 2px 2px 8px 2px $primary-colour-shade1;
+    display: inline-block;
+    height: 61.5rem;
+    margin: 2rem;
+    text-align: justify;
+    width: 50rem;
+    z-index: 2;
+    opacity: 0.1;
+  }
+}
+
+/* Media query to stack the two blocks of text on top of each other in screens smaller than a tablet landscape */
+@include respond(tab-land) {
+  .main-article {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 150rem;
+    justify-content: center;
+  }
+}

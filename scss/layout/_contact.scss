@@ -1,0 +1,159 @@
+//General styles of the contact and subscription sections
+.contact-form,
+.subscriptions {
+  background-attachment: fixed;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.466),
+      rgba(255, 255, 255, 0.808)
+    ),
+    url('../images/backgrounds/benyamin-bohlouli-Lmq7fN3yyRc-unsplash2.jpg');
+  align-items: center;
+  box-shadow: 0px 1px 4px $primary-colour-shade1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5rem auto;
+  padding: 1rem;
+  position: relative;
+  width: 59rem;
+
+  @include respond(phone) {
+    width: 100vw;
+  }
+}
+
+//Removal of outlines on all input fields on the page
+input:focus {
+  outline: none;
+}
+
+/*Centering of the two submit buttons on screen of a phone (600px) and smaller */
+button {
+  @include respond(phone) {
+    align-self: center;
+  }
+}
+
+/* Font specifications for all label elements as well as the legend element (for the radio buttons) on the page */
+label,
+legend {
+  @include font(
+    $primary-font,
+    $tertiary-colour,
+    $transparent,
+    $font-size-xs,
+    $font-regular
+  );
+  text-transform: uppercase;
+}
+
+//Font styling of all placeholder text on the page
+input::placeholder,
+textarea::placeholder {
+  @include font(
+    $secondary-font,
+    $primary-colour-shade1,
+    $transparent,
+    $font-size-xxs,
+    $font-thin-sm
+  );
+}
+
+//Common layout and styling of the two buttons on the page
+.button,
+.button-subscriptions {
+  align-self: flex-end;
+  margin: 2rem 0;
+}
+
+#btn-submit,
+#btn-subscript-submit {
+  @include font(
+    $primary-font,
+    $primary-colour-shade2,
+    $transparent,
+    $font-size-sm,
+    $font-bold-md
+  );
+  background-color: $quarternary-colour;
+  border: none;
+  box-shadow: 3px 3px 7px $primary-colour;
+  padding: 1rem 2rem;
+  transition: box-shadow 200ms;
+
+  &:active {
+    box-shadow: 1px 1px 4px $primary-colour;
+  }
+}
+
+/* Styling and layout of the "Contact Us" part of the page */
+.contact-form {
+  height: 57rem;
+
+  .fullname,
+  .email,
+  .cellphone,
+  .message {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  /* Styling and layout of the input fields. ID's were used here in preperation of the next capstone project which will extend the functionality of this one  */
+  #fname,
+  #mail,
+  #cell,
+  #comments {
+    border: 1px solid $primary-colour-shade2;
+    box-shadow: -1px -1px 4px $primary-colour-shade1;
+    padding: 1rem;
+    resize: none;
+    width: 100%;
+  }
+
+  //Layout of labels in this section of the page
+  label {
+    margin: 2rem 0 1rem 0;
+  }
+}
+
+.subscriptions {
+  /* Layout of the newsletter subscriptions section of the form */
+  background-position: center;
+  height: 44.5rem;
+
+  .email-subscriptions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10rem;
+    width: 50%;
+
+    //Spacing of the labels in this section of the page
+    label {
+      padding-bottom: 1rem;
+    }
+  }
+
+  //Styling and laoyout of the email address input field
+  #mail-sub {
+    border: 1px solid $primary-colour-shade2;
+    box-shadow: -1px -1px 4px $primary-colour-shade1;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  //Layout and styling of the radio buttons
+  fieldset {
+    border: none;
+    margin: 2rem 0;
+
+    legend {
+      margin: 2rem 0;
+      font-weight: $font-thin-md;
+    }
+  }
+}

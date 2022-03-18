@@ -1,0 +1,27 @@
+//Please note: The SASS 7-1 Architecture were used in the styling of this
+//page.
+// CSS Code validated with W3C CSS Validation Service: No errors or
+//warnings found Ref: https://validator.w3.org/#validate_by_input
+
+@import 'abstracts/variables';
+@import 'abstracts/animations';
+@import 'abstracts/mixins';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'components/item-icons';
+@import 'components/navigation';
+@import 'components/saved-modal';
+@import 'components/show-saved-btn';
+
+@import 'layout/chakra-table';
+@import 'layout/contact';
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/inspiration';
+@import 'layout/main-article';
+@import 'layout/saved-items';
+@import 'layout/stone-grid';
+
+@import 'pages/stone-selection';

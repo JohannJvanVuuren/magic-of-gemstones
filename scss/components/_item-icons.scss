@@ -1,0 +1,31 @@
+//Styling of save icon on stone-selection.html
+.save-icon {
+  cursor: pointer;
+  
+  ul {
+    list-style: none;
+  }
+
+}
+
+//Styling of like / unlike button on stone-selection.html
+//See main.js (line 82) for swapping between the two buttons
+.image-swap {
+  position: relative;
+
+  .unlike-icon {
+    position: absolute;
+    left: 0;
+  }
+
+  .like-icon {
+    position: absolute;
+    left: 0;
+  }
+
+  .transparent {
+    visibility: hidden;
+  }
+
+}
+

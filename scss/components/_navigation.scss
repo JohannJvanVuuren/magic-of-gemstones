@@ -1,0 +1,119 @@
+/*Styling of the fixed navigation bar at the top of the site */
+.navbar {
+  background-color: $primary-colour;
+  display: grid;
+  /* Use of CSS grid and grid-template-areas to make media queries easier */
+  grid-template-areas: 'home intro inspiration chakras social stones saved contact';
+  list-style: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  //Media query for tablet landscape and smaller
+  @include respond(tab-land) {
+    grid-template-areas:
+      'home home home'
+      'intro inspiration chakras'
+      'saved social stones'
+      'contact';
+  }
+
+  //Media query for tablet portrait and smaller
+  @include respond(tab-port) {
+    grid-template-areas:
+      'home home'
+      'intro inspiration'
+      'chakras social'
+      'stones contact';
+  }
+
+  //Media query for phone (600px) and smaller
+  @include respond(phone) {
+    grid-template-areas:
+      'home'
+      'intro'
+      'inspiration'
+      'chakras'
+      'social'
+      'stones'
+      'contact';
+  }
+
+  /*Styling  and positioning of the li elements of the unordered list used to construct the navigation bar*/
+  .navbar-item {
+    display: inline-block;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  //Styling of the links in the navigation bar
+  a {
+    @include font(
+      $primary-font,
+      $secondary-colour,
+      $primary-colour,
+      $font-size-sm,
+      $font-bold-md
+    );
+    padding: 1rem;
+    text-decoration: none;
+
+    //Seperate styling for hover events over the links
+    &:hover {
+      @include font(
+        $primary-font,
+        $secondary-colour,
+        $primary-colour-shade1,
+        $font-size-sm,
+        $font-bold-md
+      );
+      border-radius: 0.8rem;
+      padding: 1rem;
+    }
+
+    //Seperate styling for when a link is clicked
+    &:active {
+      color: $quarternary-colour;
+    }
+  }
+
+  #contact {
+    border-left: 1px solid $primary-colour-shade2;
+  }
+}
+//Styling of the dropdown contact menu
+.dropdown {
+  display: inline-block;
+  z-index: 10;
+  padding: 0 0.5rem;
+  background-color: $primary-colour-shade1;
+  position: absolute;
+  top: 4.4rem;
+  right: 0;
+
+  .dropdown-menu {
+    list-style: none;
+  }
+
+  .dropdown-item {
+    padding: 1rem 0;
+
+    a {
+      @include font(
+        $primary-font,
+        $secondary-colour,
+        $primary-colour-shade1,
+        $font-size-xxs,
+        $font-bold-md
+      );
+      text-decoration: none;
+    }
+  }
+}
+
+//Used for the dropdown effect in main.js (line 88)
+#hide-dropdown {
+  display: none;
+}
+

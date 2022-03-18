@@ -1,0 +1,25 @@
+//Layout of the inspiration quotation on the landing page
+.inspiration {
+  background-attachment: fixed;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.466),
+      rgba(255, 255, 255, 0.808)
+    ),
+    url('../images/backgrounds/benyamin-bohlouli-Lmq7fN3yyRc-unsplash2.jpg');
+  height: 60rem;
+  margin-top: 1rem;
+
+  /* Media queries to increase height on snaller screen sizes tablet(landscape), tablet(portrait and phone */
+  @include respond(tab-land) {
+    height: 75rem;
+  }
+
+  @include respond(tab-port) {
+    height: 80rem;
+  }
+
+  @include respond(phone) {
+    height: 100rem;
+  }
+}

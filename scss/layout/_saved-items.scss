@@ -1,0 +1,40 @@
+//Styling of the saved items dynamically inserted from dynamic-insert.js
+.saved {
+
+  h3 {
+    text-align: center;
+  }
+  
+}
+
+//Styling of the container and individual items
+.saved-items {
+  align-items: center;
+  box-shadow: 2px 2px 24px $fifth-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto 3rem auto;
+  padding: 5rem;
+  width: 75%;
+
+  div {
+    display: grid;
+    gap: 15rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    margin-top: 5rem;
+    padding: 2rem;
+
+    h3 {
+      align-items: flex-start;
+      display: inline-block;
+    }
+
+    img {
+      height: auto;
+      width: 7.5rem;
+      
+    }
+  }
+}

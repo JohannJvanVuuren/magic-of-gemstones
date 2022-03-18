@@ -1,0 +1,57 @@
+.chakras {
+  //Spacing of the table
+  margin-bottom: 5rem;
+  
+
+
+  /* General styling of the table structure and general appearance */
+  table {
+    // background-color: $fifth-color;
+    background-attachment: fixed;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.8)
+      ),
+      url('../images/backgrounds/kazuend-19SC2oaVZW0-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid $tertiary-colour;
+    border-collapse: collapse;
+    border-spacing: 2rem;
+    box-shadow: 4px 4px 20px $primary-colour-shade1;
+    margin: 5rem auto 0 auto;
+    table-layout: auto;
+    width: 100rem;
+  }
+
+  //Styling of the column headers
+  th {
+    @include font(
+      $primary-font,
+      $tertiary-colour,
+      $transparent,
+      $font-size-sm,
+      $font-bold-md
+    );
+  }
+
+  //Spacing and styling of the cell text
+  td {
+    @include font(
+      $primary-font,
+      $tertiary-colour,
+      $transparent,
+      $font-size-xs,
+      $font-regular
+      );
+    border: 2px solid $tertiary-colour;
+    text-align: center;
+  }
+
+  /* Media query to decrease the table width on screen smaller than tablet landscapes */
+  @include respond(tab-land) {
+    width: 50rem;
+  }
+}

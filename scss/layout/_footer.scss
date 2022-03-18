@@ -1,0 +1,80 @@
+footer {
+  //General layout of the footer
+  background-color: $primary-colour-shade1;
+  display: grid;
+  /* Use of CSS grid and grid-template-areas to space elements efectively */
+  grid-template-areas:
+    'footer-nav icons icons icons'
+    'footer-nav copyright copyright copyright';
+  height: 15rem;
+
+  //Layout of social media icons and link to icons8 website
+  .social-media-icons {
+    grid-area: icons;
+    justify-self: flex-end;
+    position: relative;
+
+    img {
+      padding: 0.5rem;
+    }
+
+    .icon-credit {
+      color: $primary-colour-shade2;
+      display: block;
+      font-size: $font-size-normal;
+      position: absolute;
+      right: 0;
+      text-decoration: none;
+    }
+  }
+
+  //Layout and styling of copyright statement
+  .copyright {
+    @include font(
+      $primary-font,
+      $primary-colour-shade2,
+      $transparent,
+      $font-size-xxs,
+      $font-thin-md
+    );
+    align-self: flex-end;
+    grid-area: copyright;
+    justify-self: flex-end;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  //Layout and styling of footer navigation stack
+  .footer-nav {
+    grid-area: footer-nav;
+
+    ul {
+      background-color: $primary-colour;
+      list-style: none;
+      padding: 0.7rem;
+      width: 15rem;
+
+      li {
+        a {
+          @include font(
+            $primary-font,
+            $primary-colour-shade2,
+            $transparent,
+            $font-size-xxs,
+            $font-bold-lg
+          );
+          text-decoration: none;
+
+          &:active {
+            color: $quarternary-colour;
+          }
+        }
+
+        &:hover {
+          background-color: $primary-colour-shade1;
+        }
+      }
+    }
+  }
+}

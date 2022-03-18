@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemstones Magic: Stones</title>
+    <!-- Line Awesome Icons CDN link -->
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" />
+    <!-- Google Fonts CDN link for Lato and Merriweather fonts.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- jQuery CDN link via Google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Main jQuery script -->
+    <script src="./js/main.js"></script>
+
+  </head>
+
+  <!-- Code validated with W3C Markup Validation Service: No errors or warnings found Ref: https://validator.w3.org/#validate_by_input -->
+
+  <body>
+
+    <!-- Navigation bar which is styled to be fixed at the top of the viewport as the viewer scrolls through the site -->
+    <nav id="home">
+      <ul class="navbar">
+        <li class="navbar-item navbar-item__home">
+          <a href="index.html#home"> Home </a>
+        </li>
+        <li class="navbar-item navbar-item__introduction">
+          <a href="index.html#introduction"> Introduction </a>
+        </li>
+        <li class="navbar-item navbar-item__inspiration">
+          <a href="index.html#inspiration"> Inspiration </a>
+        </li>
+        <li class="navbar-item navbar-item__chakras">
+          <a href="index.html#chakras"> The Chakras </a>
+        </li>
+        <li class="navbar-item navbar-item__social">
+          <a href="index.html#social"> Social Media Links </a>
+        </li>
+        <li class="navbar-item navbar-item__stones">
+          <a href="stone-selection.html"> Selected Stones </a>
+        </li>
+        <li class="navbar-item navbar-item__saved">
+          <a href="saved-items.html">Saved Items</a>
+        </li>
+        <li id="contact" class="navbar-item navbar-item__contact">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Contact dropdown menu animation (see main.js) -->
+    <div id="hide-dropdown" class="dropdown">
+      <ul class="dropdown-menu">
+        <li class="dropdown-item"><a href="contact.html">Contact Request</a></li>
+        <li class="dropdown-item"><a href="comments.html">Comments</a></li>
+        <li class="dropdown-item"><a href="newsletter.html">Newsletter</a></li>
+      </ul>
+    </div>
+    
+    <!-- Header of site excluding the navigation bar which is fixed to the top of the pages -->
+    <header class="header">
+      <!-- Credit for background image: Sevenfold-path-1024x739,jpg - https://www.infinumgrowth.com/7-chakras-enhance-lives/ -->
+      <div>
+        <!-- Only one h1 heading is used on the site -->
+        <h1>The magic of gemstones</h1>
+      </div>
+      <p class="paragraph-left">
+        A short journey into the history, symbolic meaning and
+      </p>
+      <p class="paragraph-right"> healing properties of gemstones. </p>
+    </header>
+
+    <!-- Main section of the landing page containing an article, a quotation and a table -->
+    <main>
+
+      <!-- The main article of the landing page which contains two blocks of text that appear side by side except for small screen sizes where they will be stacked on top of each other -->
+      <article class="main-article" id="introduction">
+        <!-- The h2 headings are styled identical throughout the site (see _typography.scss) -->
+        <div class="h2-container">
+          <h2>Introduction</h2>
+        </div>
+        <!-- div Used as a container for the two blocks of text that forms the article -->
+        <!-- All id's on this page is used for the anchors in the main and footer navigation -->
+        <div class="article-container">
+          <div class="article-block article-block__1">
+            <p>
+              Since the beginning of time, mankind have been held in the spell
+              of the gems of the earth. In ancient time these stones were
+              considered sacred and were integral in the domains of religion,
+              medicine, protection and divinatory practices.
+            </p>
+            <p>
+              From prehistoric times we have evidence of the Shiva Linghams,
+              which were used as symbolic presentations of the god Shiva.
+            </p>
+            <p>
+              The ancient Greek Pythagoreans believed that the sun was a giant
+              crystal ball that gathered the light of the cosmos and reflected
+              it back to the earth.
+            </p>
+            <p>
+              Gemstones have since time immemorial been thought of as the very
+              bones of the earth and believed to carry the power of our life
+              giving planet.
+            </p>
+            <p>
+              Our current theories revolves around the belief that they hold and
+              transmute energy. It is this transmuted energy that interacts with
+              the body, mind and soul of a living being.
+            </p>
+          </div>
+          <div class="article-block article-block__2">
+            <p>
+              In this website I seek to offer a brief introduction not only to
+              stones and their mystical properties, but also the ancient Chakra
+              system to which the various stones have been mapped.
+            </p>
+            <p
+              >It is this mapping of stones, their qualities and the
+              corresponding Chakras, that form the basis of crystal healing as
+              we know it today.
+            </p>
+            <p
+              >There are numerous anecdotal accounts of the benefit of crystal
+              therapy and healing, which have ensured a thriving industry around
+              it.
+            </p>
+            <p
+              >It is important to note, however, that the theories around
+              gemstones and their mystical properties are intuitive and based on
+              anecdotal evidence, and has not been subjected to empirical
+              scientific investigation.
+            </p>
+            <p>
+              Having said that, it still remains a part of our heritage as human
+              beings and has been a source of inspiration and relief for many
+              people.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <section class="inspiration" id="inspiration">
+        <!-- Credit for background image: benyamin-bohlouli-Lmq7fN3yyRc-unsplash.jpg – Benyamin-Bohlouli on Unsplash -->
+        <h2>Sensual Magic</h2>
+        <!-- Section with a quotation from a book used as source material (amongst others) for the content of the page  -->
+        <blockquote>
+          <p>
+            Crystals are a sensual and intuitive experience rather than an
+            intellectual pursuit. They have a unique ability to absorb and
+            transmute negative energy into beneficence - and to interact
+            with us energetically. Their ability to harness the power of our
+            mind is truly incredible - they amp up the energy , boosting
+            whatever we do. And it's through handling them that we really
+            connect to their magic.
+          </p>
+          <p>
+            If you've never worked with crystals before, you're in for
+            a treat. These scrumptious beings pack a potent punch and you'll
+            be amazed at the ways in which they enhance your life. Not merely
+            decorative, they are protective and life-affirming too. They can
+            increase your energy, enhance your well-being, help you to keep calm
+            in a crisis, change the way you think, ensure your space is safe,
+            offer you guidance and much else besides.
+          </p>
+          <p>
+            To begin with, just pick up a Quartz crystal. Hold it lightly in
+            your hand for a minute or two. Do you feel a tingling vibration or a
+            pulsing in you hand? If so, you're experiencing the energy of
+            the crystal.
+          </p>
+        </blockquote>
+        <!-- Citation for the quotation -->
+        <cite
+          >“Crystals: How to Use Crystals and Their Energy to Enhance Your Life”
+          &ndash; Judy Hall (2015)"
+        </cite>
+      </section>
+
+      <section class="chakras" id="chakras">
+        <h2>The Chakra System</h2>
+        <!-- This section contains a table with some images and descriptive text. The thead, tbody and tfooter elements were included for semantic clarity -->
+        <table>
+          <thead>
+            <tr>
+              <th>Mandala</th>
+              <th>Sanskrit Name</th>
+              <th>English Translation</th>
+              <th>Colour</th>
+              <th>Anatomical Placement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <!-- One of the images in the table. The images did not require any modification since they were of sufficiently small size -->
+                <img
+                  src="./images/chakras/80px-Muladhara_Mandala.svg.png"
+                  alt="Mandala of the root chakra"/>
+              </td>
+              <td>Muladhara</td>
+              <td>Root</td>
+              <td>Red</td>
+              <td>Base of spine</td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="./images/chakras/80px-Swadhisthana_Mandala.svg.png"
+                  alt="Mandala of the perineal chakra"/>
+              </td>
+              <td>Swadhisthana</td>
+              <td>Where the self is established</td>
+              <td>Orange</td>
+              <td>Perineum</td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="./images/chakras/80px-Manipura_Mandala.svg.png"
+                  alt="Mandala of the navel chakra"/>
+              </td>
+              <td>Manipura</td>
+              <td>Jewel City</td>
+              <td>Yellow</td>
+              <td>Navel</td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="./images/chakras/80px-Anahata_Mandala.svg.png"
+                  alt="Mandala of the heart chakra"/>
+              </td>
+              <td>Anahata</td>
+              <td>Unstruck</td>
+              <td>Green</td>
+              <td>Heart</td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="./images/chakras/80px-Vishuddha_Mandala.svg.png"
+                  alt="Mandala of the throat chakra"/>
+              </td>
+              <td>Vishuddha</td>
+              <td>Purest</td>
+              <td>Blue</td>
+              <td>Throat</td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="./images/chakras/80px-Ajna_Mandala.svg.png"
+                  alt="Mandala of the third eye chakra"/>
+              </td>
+              <td>Ajna</td>
+              <td>Command</td>
+              <td>Indigo</td>
+              <td>Third Eye</td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="./images/chakras/80px-Sahasrara_Mandala.svg.png"
+                  alt="Mandala of the crown chakra"/>
+              </td>
+              <td>Sahasrara</td>
+              <td>Thousand Petalled</td>
+              <td>Violet</td>
+              <td>Crown</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <!-- Colspan was used here to merge the 5 cells into one footer cell for the image credits -->
+              <td colspan="5">Images credit: https://en.wikipedia.org/wiki/Chakra</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+    </main>
+
+    <!-- The footer section is divided into three sections (divs). Social media icons (and a link to the source), the copyright clause and a navigation stack. They were all arranged with the help of CSS grid as discussed in the *.scss files -->
+    <footer>
+      <!-- The social media icon section with icons from Line Awesome -->
+      <div class="social-media-icons" id="social">
+        <a href="https://facebook.com/johann.vanvuuren.167" target="_blank" class="social-media-link">
+          <img
+            src="https://img.icons8.com/color/48/000000/facebook-new.png"
+            alt="Facebook Icon"/>
+        </a>
+        <a href="https://www.instagram.com/_techno_mage" target="_blank" class="social-media-link">
+          <img
+            src="https://img.icons8.com/fluency/48/000000/instagram-new.png"
+            alt="Instagram Icon"/>
+        </a>
+        <a href="https://twitter.com/KomtMage" target="_blank" class="social-media-link">
+          <img
+            src="https://img.icons8.com/fluency/48/000000/twitter.png"
+            alt="Twitter Icon"/>
+        </a>
+        <a href="https://icons8.com/icon/5MQ0gPAYYx7a/twitter" class="icon-credit"
+          >Social Media Icons by Icons8</a>
+      </div>
+      <!-- The copyright clause -->
+      <div class="copyright">
+        Copyright &copy; 2022 Johann J van Vuuren. All rights reserved.
+      </div>
+      <!-- The footer navigation stack using an unordered list. -->
+      <div class="footer-nav">
+        <ul>
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#inspiration">Inspiration</a>
+          </li>
+          <li>
+            <a href="#chakras">The Chakras</a>
+          </li>
+          <li>
+            <a href="#social">Social Media Links</a>
+          </li>
+          <li>
+            <a href="stone-selection.html">Selected Stones</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    
+  </body>
+  
+</html>

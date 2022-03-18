@@ -1,0 +1,924 @@
+@charset "UTF-8";
+/* Animation of text sliding in on header */
+@-webkit-keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50rem);
+  }
+  80% {
+    transform: translate(-50%, -1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50rem);
+  }
+  80% {
+    transform: translate(-50%, -1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@-webkit-keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100rem, -50%);
+  }
+  80% {
+    transform: translate(-1rem, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100rem, -50%);
+  }
+  80% {
+    transform: translate(-1rem, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@-webkit-keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translate(100rem, 50%);
+  }
+  80% {
+    transform: translate(-50rem, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translate(100rem, 50%);
+  }
+  80% {
+    transform: translate(-50rem, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800]"  Normal styles apply
+1800px + :      Extra large desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  padding: 2rem;
+  position: relative;
+}
+
+h2 {
+  background-image: url("../images/backgrounds/Sevenfold-path-1024x739.jpg");
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 3.5rem;
+  padding-top: 5rem;
+  text-align: center;
+}
+
+h3 {
+  background-image: url("../images/backgrounds/Sevenfold-path-1024x739.jpg");
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+h4 {
+  background-image: url("../images/backgrounds/Sevenfold-path-1024x739.jpg");
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.header {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  /* In preperation of seperate positionings of the two paragraph for two animations. Slide in from left and slide in from right */
+}
+.header div {
+  text-align: center;
+}
+.header h1 {
+  background-image: url("../images/backgrounds/Sevenfold-path-1024x739.jpg");
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 5rem;
+  /* Positioning in preperation of a slide in from above animation */
+  -webkit-animation: moveInTop 4s ease-out;
+          animation: moveInTop 4s ease-out;
+  left: 50%;
+  position: absolute;
+  top: 30%;
+  transform: translate(-50%, -50%);
+}
+.header p {
+  position: absolute;
+}
+.header .paragraph-left {
+  background-image: url("../images/backgrounds/Sevenfold-path-1024x739.jpg");
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2rem;
+  -webkit-animation: moveInLeft 4s ease-out;
+          animation: moveInLeft 4s ease-out;
+  left: 50%;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* Media query (via mixin) for screens smaller than a tablet landscape */
+}
+@media only screen and (max-width: 75em) {
+  .header .paragraph-left {
+    background-image: url("../images/backgrounds/Sevenfold-path-1024x739.jpg");
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.6rem;
+  }
+}
+.header .paragraph-right {
+  background-image: url("../images/backgrounds/Sevenfold-path-1024x739.jpg");
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2rem;
+  -webkit-animation: moveInRight 4s ease-out;
+          animation: moveInRight 4s ease-out;
+  left: 50%;
+  text-align: center;
+  top: 60%;
+  transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 75em) {
+  .header .paragraph-right {
+    background-image: url("../images/backgrounds/Sevenfold-path-1024x739.jpg");
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .header .paragraph-right {
+    top: 60%;
+  }
+}
+
+.main-article p {
+  font-family: "Merriweather", serif;
+  color: #00003f;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.8rem;
+  font-weight: 300;
+  padding: 2rem;
+}
+
+.inspiration {
+  /* Inpreperation of the absolute positioning of the ::before pseudo element as well as the cite element */
+  position: relative;
+}
+.inspiration blockquote {
+  font-family: "Merriweather", serif;
+  color: #00003f;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.8rem;
+  font-weight: 300;
+  padding: 3rem;
+  /* Use of the ::before pseudoelement to insert the stylized large quotation mark before the quoted passage under the inspiration section of the site. */
+}
+.inspiration blockquote p {
+  padding: 2rem;
+}
+.inspiration blockquote::before {
+  content: "“";
+  font-size: 5rem;
+  left: 1.5rem;
+  position: absolute;
+}
+.inspiration cite {
+  font-family: "Merriweather", serif;
+  color: #00003f;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.6rem;
+  font-weight: 100;
+  position: absolute;
+  right: 10%;
+}
+
+.stones i {
+  font-size: large;
+}
+
+.saved-modal__content #number-of-items {
+  letter-spacing: 0.5px;
+}
+.saved-modal__content span {
+  font-weight: 700;
+}
+
+.save-icon {
+  cursor: pointer;
+}
+.save-icon ul {
+  list-style: none;
+}
+
+.image-swap {
+  position: relative;
+}
+.image-swap .unlike-icon {
+  position: absolute;
+  left: 0;
+}
+.image-swap .like-icon {
+  position: absolute;
+  left: 0;
+}
+.image-swap .transparent {
+  visibility: hidden;
+}
+
+/*Styling of the fixed navigation bar at the top of the site */
+.navbar {
+  background-color: #333;
+  display: grid;
+  /* Use of CSS grid and grid-template-areas to make media queries easier */
+  grid-template-areas: "home intro inspiration chakras social stones saved contact";
+  list-style: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  /*Styling  and positioning of the li elements of the unordered list used to construct the navigation bar*/
+}
+@media only screen and (max-width: 75em) {
+  .navbar {
+    grid-template-areas: "home home home" "intro inspiration chakras" "saved social stones" "contact";
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .navbar {
+    grid-template-areas: "home home" "intro inspiration" "chakras social" "stones contact";
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .navbar {
+    grid-template-areas: "home" "intro" "inspiration" "chakras" "social" "stones" "contact";
+  }
+}
+.navbar .navbar-item {
+  display: inline-block;
+  padding: 1rem;
+  text-align: center;
+}
+.navbar a {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #fff;
+  background-color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem;
+  text-decoration: none;
+}
+.navbar a:hover {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #fff;
+  background-color: #525151;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+.navbar a:active {
+  color: #5d7b99;
+}
+.navbar #contact {
+  border-left: 1px solid #ebe7e7;
+}
+
+.dropdown {
+  display: inline-block;
+  z-index: 10;
+  padding: 0 0.5rem;
+  background-color: #525151;
+  position: absolute;
+  top: 4.4rem;
+  right: 0;
+}
+.dropdown .dropdown-menu {
+  list-style: none;
+}
+.dropdown .dropdown-item {
+  padding: 1rem 0;
+}
+.dropdown .dropdown-item a {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #fff;
+  background-color: #525151;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#hide-dropdown {
+  display: none;
+}
+
+#saved-items-modal {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+#saved-items-modal .saved-modal__content {
+  align-items: center;
+  background-color: #eaf4ff;
+  border: 2px solid #525151;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 12px #525151;
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  justify-content: space-evenly;
+  padding: 2rem;
+  width: 30%;
+}
+#saved-items-modal .saved-modal__content h3 {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #333;
+  background-color: #eaf4ff;
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-align: center;
+}
+#saved-items-modal .saved-modal__content button {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #ebe7e7;
+  background-color: #00003f;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: 1px solid #ebe7e7;
+  border-radius: 1rem;
+  height: 4rem;
+  width: 10rem;
+}
+
+.show-hide-saved-items {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+.show-hide-saved-items #show-saved {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #525151;
+  background-color: #ebe7e7;
+  font-size: 1.6rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+.show-hide-saved-items #show-saved:active {
+  box-shadow: 1px 1px 4px;
+}
+
+.chakras {
+  margin-bottom: 5rem;
+  /* General styling of the table structure and general appearance */
+  /* Media query to decrease the table width on screen smaller than tablet landscapes */
+}
+.chakras table {
+  background-attachment: fixed;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8)), url("../images/backgrounds/kazuend-19SC2oaVZW0-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid #00003f;
+  border-collapse: collapse;
+  border-spacing: 2rem;
+  box-shadow: 4px 4px 20px #525151;
+  margin: 5rem auto 0 auto;
+  table-layout: auto;
+  width: 100rem;
+}
+.chakras th {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #00003f;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 2rem;
+  font-weight: 700;
+}
+.chakras td {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #00003f;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.8rem;
+  font-weight: 400;
+  border: 2px solid #00003f;
+  text-align: center;
+}
+@media only screen and (max-width: 75em) {
+  .chakras {
+    width: 50rem;
+  }
+}
+
+.contact-form,
+.subscriptions {
+  background-attachment: fixed;
+  background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.466), rgba(255, 255, 255, 0.808)), url("../images/backgrounds/benyamin-bohlouli-Lmq7fN3yyRc-unsplash2.jpg");
+  align-items: center;
+  box-shadow: 0px 1px 4px #525151;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5rem auto;
+  padding: 1rem;
+  position: relative;
+  width: 59rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .contact-form,
+.subscriptions {
+    width: 100vw;
+  }
+}
+
+input:focus {
+  outline: none;
+}
+
+/*Centering of the two submit buttons on screen of a phone (600px) and smaller */
+@media only screen and (max-width: 37.5em) {
+  button {
+    align-self: center;
+  }
+}
+
+/* Font specifications for all label elements as well as the legend element (for the radio buttons) on the page */
+label,
+legend {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #00003f;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  font-family: "Merriweather", serif;
+  color: #525151;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.6rem;
+  font-weight: 100;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  font-family: "Merriweather", serif;
+  color: #525151;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.6rem;
+  font-weight: 100;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Merriweather", serif;
+  color: #525151;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.6rem;
+  font-weight: 100;
+}
+
+.button,
+.button-subscriptions {
+  align-self: flex-end;
+  margin: 2rem 0;
+}
+
+#btn-submit,
+#btn-subscript-submit {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #ebe7e7;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: #5d7b99;
+  border: none;
+  box-shadow: 3px 3px 7px #333;
+  padding: 1rem 2rem;
+  transition: box-shadow 200ms;
+}
+#btn-submit:active,
+#btn-subscript-submit:active {
+  box-shadow: 1px 1px 4px #333;
+}
+
+/* Styling and layout of the "Contact Us" part of the page */
+.contact-form {
+  height: 57rem;
+  /* Styling and layout of the input fields. ID's were used here in preperation of the next capstone project which will extend the functionality of this one  */
+}
+.contact-form .fullname,
+.contact-form .email,
+.contact-form .cellphone,
+.contact-form .message {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.contact-form #fname,
+.contact-form #mail,
+.contact-form #cell,
+.contact-form #comments {
+  border: 1px solid #ebe7e7;
+  box-shadow: -1px -1px 4px #525151;
+  padding: 1rem;
+  resize: none;
+  width: 100%;
+}
+.contact-form label {
+  margin: 2rem 0 1rem 0;
+}
+
+.subscriptions {
+  /* Layout of the newsletter subscriptions section of the form */
+  background-position: center;
+  height: 44.5rem;
+}
+.subscriptions .email-subscriptions {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10rem;
+  width: 50%;
+}
+.subscriptions .email-subscriptions label {
+  padding-bottom: 1rem;
+}
+.subscriptions #mail-sub {
+  border: 1px solid #ebe7e7;
+  box-shadow: -1px -1px 4px #525151;
+  padding: 1rem;
+  width: 100%;
+}
+.subscriptions fieldset {
+  border: none;
+  margin: 2rem 0;
+}
+.subscriptions fieldset legend {
+  margin: 2rem 0;
+  font-weight: 300;
+}
+
+footer {
+  background-color: #525151;
+  display: grid;
+  /* Use of CSS grid and grid-template-areas to space elements efectively */
+  grid-template-areas: "footer-nav icons icons icons" "footer-nav copyright copyright copyright";
+  height: 15rem;
+}
+footer .social-media-icons {
+  grid-area: icons;
+  justify-self: flex-end;
+  position: relative;
+}
+footer .social-media-icons img {
+  padding: 0.5rem;
+}
+footer .social-media-icons .icon-credit {
+  color: #ebe7e7;
+  display: block;
+  font-size: 1.1rem;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+}
+footer .copyright {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #ebe7e7;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.6rem;
+  font-weight: 300;
+  align-self: flex-end;
+  grid-area: copyright;
+  justify-self: flex-end;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-bottom: 2rem;
+}
+footer .footer-nav {
+  grid-area: footer-nav;
+}
+footer .footer-nav ul {
+  background-color: #333;
+  list-style: none;
+  padding: 0.7rem;
+  width: 15rem;
+}
+footer .footer-nav ul li a {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #ebe7e7;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+footer .footer-nav ul li a:active {
+  color: #5d7b99;
+}
+footer .footer-nav ul li:hover {
+  background-color: #525151;
+}
+
+/* Layout of header excluding the navigation bar fixed to the top of the site pages */
+.header {
+  background-attachment: fixed;
+  background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.466), rgba(255, 255, 255, 0.808)), url("../images/backgrounds/Sevenfold-path-1024x739.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+  height: 85vh;
+  position: relative;
+  z-index: 5;
+}
+@media only screen and (max-width: 75em) {
+  .header {
+    margin-top: 10rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .header {
+    margin-top: 25rem;
+  }
+}
+
+.inspiration {
+  background-attachment: fixed;
+  background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.466), rgba(255, 255, 255, 0.808)), url("../images/backgrounds/benyamin-bohlouli-Lmq7fN3yyRc-unsplash2.jpg");
+  height: 60rem;
+  margin-top: 1rem;
+  /* Media queries to increase height on snaller screen sizes tablet(landscape), tablet(portrait and phone */
+}
+@media only screen and (max-width: 75em) {
+  .inspiration {
+    height: 75rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .inspiration {
+    height: 80rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .inspiration {
+    height: 100rem;
+  }
+}
+
+.main-article {
+  height: 90rem;
+  margin-top: -7rem;
+  padding-top: 10rem;
+  position: relative;
+  text-align: center;
+  z-index: -1;
+  /* Styling and positioning the two blocks of text that makes up the main article of the landing page */
+}
+.main-article .article-block {
+  background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.466), rgba(255, 255, 255, 0.808)), url("../images/backgrounds/2052200141.jpg");
+  background-position: center;
+  box-shadow: 2px 2px 8px 2px #525151;
+  display: inline-block;
+  height: 61.5rem;
+  margin: 2rem;
+  text-align: justify;
+  width: 50rem;
+  z-index: 2;
+  opacity: 0.1;
+}
+
+/* Media query to stack the two blocks of text on top of each other in screens smaller than a tablet landscape */
+@media only screen and (max-width: 75em) {
+  .main-article {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 150rem;
+    justify-content: center;
+  }
+}
+.saved h3 {
+  text-align: center;
+}
+
+.saved-items {
+  align-items: center;
+  box-shadow: 2px 2px 24px #eaefff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto 3rem auto;
+  padding: 5rem;
+  width: 75%;
+}
+.saved-items div {
+  display: grid;
+  gap: 15rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  margin-top: 5rem;
+  padding: 2rem;
+}
+.saved-items div h3 {
+  align-items: flex-start;
+  display: inline-block;
+}
+.saved-items div img {
+  height: auto;
+  width: 7.5rem;
+}
+
+/* Using CSS grid to layout the cards that are displayed on the selected stones page of the site. Three media queries are used for responsive re-stacking on bigger and smaller than normal screens */
+.stones-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 5rem auto 5rem auto;
+  max-width: 180rem;
+  /* Styling the cards using CSS grid and grid-template-areas to aid in the spacing of the three elements on each card*/
+}
+@media only screen and (min-width: 112.5em) {
+  .stones-cards {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media only screen and (max-width: 75em) {
+  .stones-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .stones-cards {
+    grid-template-columns: 1fr;
+  }
+}
+.stones-cards .card {
+  border: 1px solid #ebe7e7;
+  box-shadow: 0px 1px 4px #525151;
+  display: grid;
+  grid-template-areas: "image heading" "image paragraph" "image icons";
+  justify-self: center;
+  padding: 1rem;
+  transition: all 1s;
+  /* Styling and layout of the heading of each card */
+  /* Styling and layout of the descriptive text of each card */
+  /* Special effect (lifting up) when the user hovers the mouse over a card */
+}
+.stones-cards .card img {
+  grid-area: image;
+  height: auto;
+  padding: 1rem;
+  width: 15rem;
+}
+.stones-cards .card h3 {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #00003f;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.6rem;
+  font-weight: 700;
+  align-self: flex-start;
+  grid-area: heading;
+  text-transform: uppercase;
+}
+.stones-cards .card h4 {
+  font-family: "Merriweather", serif;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.1rem;
+  font-weight: 300;
+  align-self: flex-start;
+  grid-area: paragraph;
+}
+.stones-cards .card:hover {
+  transform: scale(1.06);
+}
+.stones-cards .card .icons {
+  grid-area: icons;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Styling of the credits and the two external links on the bottom of the stone selection page */
+a,
+.credits {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: #00003f;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* Styling of the external links specifically with a better looking underline than a normal link */
+.external-links {
+  list-style: none;
+  text-align: center;
+}
+.external-links li {
+  margin: 0.5rem 0;
+}
+.external-links a {
+  border-bottom: 2px solid #00003f;
+  display: inline-block;
+  font-weight: 900;
+  padding-bottom: 3px;
+  text-decoration: none;
+}/*# sourceMappingURL=main.css.map */

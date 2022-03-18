@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemstones Magic</title>
+    <!-- Line Awesome Icons CDN link -->
+    <link rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" />
+    <!-- Google Fonts CDN link for Lato and Merriweather fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet" />
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://kit.fontawesome.com/ffc4ae6340.js" crossorigin="anonymous"></script>
+    <!-- jQuery CDN link via Google-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Main jQuery script -->
+    <script src="./js/main.js"></script>
+
+  </head>
+
+  <!-- Code validated with W3C Markup Validation Service: No errors or warnings found Ref: https://validator.w3.org/#validate_by_input -->
+
+  <body>
+
+    <!-- The navigation, header and footer section will not be discussed since they have been described in index.html -->
+    <nav id="home">
+      <ul class="navbar">
+        <li class="navbar-item navbar-item__home">
+          <a href="index.html#home"> Home </a>
+        </li>
+        <li class="navbar-item navbar-item__introduction">
+          <a href="index.html#introduction"> Introduction </a>
+        </li>
+        <li class="navbar-item navbar-item__inspiration">
+          <a href="index.html#inspiration"> Inspiration </a>
+        </li>
+        <li class="navbar-item navbar-item__chakras">
+          <a href="index.html#chakras"> The Chakras </a>
+        </li>
+        <li class="navbar-item navbar-item__social">
+          <a href="index.html#social"> Social Media Links </a>
+        </li>
+        <li class="navbar-item navbar-item__stones">
+          <a href="stone-selection.html"> Selected Stones </a>
+        </li>
+        <li class="navbar-item navbar-item__saved">
+          <a href="saved-items.html">Saved Items</a>
+        </li>
+        <li id="contact" class="navbar-item navbar-item__contact">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Contact dropdown menu animation (see main.js) -->
+    <div id="hide-dropdown" class="dropdown">
+      <ul class="dropdown-menu">
+        <li class="dropdown-item"><a href="contact.html">Contact Request</a></li>
+        <li class="dropdown-item"><a href="comments.html">Comments</a></li>
+        <li class="dropdown-item"><a href="newsletter.html">Newsletter</a></li>
+      </ul>
+    </div>
+    
+    <header class="header">
+      <!-- Credit for background image: Sevenfold-path-1024x739,jpg - https://www.infinumgrowth.com/7-chakras-enhance-lives/ -->
+      <div>
+        <h1>The magic of gemstones</h1>
+      </div>
+      <p class="paragraph-left">
+        A short journey into the history, symbolic meaning and
+      </p>
+      <p class="paragraph-right">
+        healing properties of gemstones.
+      </p>
+    </header>
+
+    <!-- Dialogue box modal to alert the user to the number of saved items every time one more is added -->
+    <div id="saved-items-modal" class="saved-modal">
+      <div class="saved-modal__content">
+        <h3 id="number-of-items">You currently have <span id="selection-page-saved-items">0</span> item(s) saved.</h3>
+        <button id="close-saved__modal">Okay</button>
+      </div>
+    </div>
+
+    <!-- This page is basically a grid containing cards, each containing an image, a header and a short descriptive text -->
+    <main class="stones">
+      <h2>Selected stones and their properties</h2>
+      <!-- This is the CSS grid container for the cards -->
+      <div class="stones-cards">
+        <!-- This is the CSS grid container for an individual card. The grid was needed to space the three elements on each card. -->
+        <div class="card" id="save-amethyst">
+          <!-- An example of one of the images. The images were scaled down due to spacing constrainst of the large grid as well as the individual card grids. -->
+          <img src="./images/stones/amethyst-300x300.jpg" alt="Photo of amethyst stones" />
+          <!-- A card heading -->
+          <h3>Amethyst</h3>
+          <!-- An example of the short descritive text on each card -->
+          <p>Tranquility, clarity of thought, enhances intuition and eases
+            obsessive compulsive behaviour.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="amethyst">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="amethyst" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-amethyst">
+                <i class="fa fa-opencart" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-aquamarine">
+          <img src="./images/stones/aquamarine-300x300.jpg" alt="Photo of aquamarine stones" />
+          <h3>Aquamarine</h3>
+          <p>Courage, release of anxiety and fear; Promotes insight and mental
+            clarity
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="aquamarine">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="aquamarine" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-aquamarine">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-black-obsidian">
+          <img src="./images/stones/black-obsidian-300x300.jpg" alt="Photo of black obsidian stones" />
+          <h3>Black Obsidian</h3>
+          <p>Associated with mystery and a strong ability to absorb; used for
+            psychich cleansing and protection
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="black-obsidian">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="black-obsidian" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-black-obsidian">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-black-tourmaline">
+          <img src="./images/stones/black-tourmaline-300x300.jpg" alt="Photo of black tourmaline stones" />
+          <h3>Black Tourmaline</h3>
+          <p>Symbolizes safety, grounding and protection; cover the wearer with
+            a cloak to shield from negative energy.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="black-tourmaline">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="black-tourmaline" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-black-tourmaline">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-blue-lace-agate">
+          <img src="./images/stones/blue-lace-agate-300x300.jpg" alt="Photo of blue lace agate stones" />
+          <h3>Blue Lace Agate</h3>
+          <p>
+            Symbolises unity, hope, protection, harmony, optimism, positivity
+            and appreciation of the natural world.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="blue-lace-agate">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="blue-lace-agate" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-blue-lace-agate">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-citrine">
+          <img src="./images/stones/citrine-300x300.jpg" alt="Photo of citrine stones" />
+          <h3>Citrine</h3>
+          <p>Excellent for overcoming depression, fears and phobias. Also a
+            powerfull stone for self-healing and insppiration.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="citrine">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="citrine" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-citrine">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-fluorite">
+          <img src="./images/stones/Fluorite--300x300.jpg" alt="Photo of fluorite stones" />
+          <h3>Fluorite</h3>
+          <p>Transforms negative energy into positive energy. Boosts mental
+            clarity and promotes peace of mind. Good for spiritual
+            detoxification.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="fluorite">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="fluorite" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-fluorite">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-green-malachite">
+          <img src="./images/stones/green-malachite-300x300.jpg" alt="Photo of green malachite stones" />
+          <h3>Green Malachite</h3>
+          <p>A protection stone. Absorbing negative energies and pollutants from
+            the atmosphere and body. Also shields against electromagnetic
+            fields.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="green-malachite">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="green-malachite" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-green-malachite">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-hematite">
+          <img src="./images/stones/hematite-300x300.jpg" alt="Photo of hematite stones" />
+          <h3>Hematite</h3>
+          <p>Protection, grounding, power and strength. Restores, strenthens and
+            regulates blood flow.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="hematite">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="hematite" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-hematite">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-labradorite">
+          <img src="./images/stones/labradorite-300x300.jpg" alt="Photo of labradorite stones" />
+          <h3>Labradorite</h3>
+          <p>One of the most powerfull protectors. Creates a shield for auras
+            and protects against negative energies. Also tempers the
+            negativities in oneself.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="labradorite">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="labradorite" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-labradorite">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-lapis-lazuli">
+          <img src="./images/stones/lapis-lazuli-300x300.jpg" alt="Photo of lapis lazuli stones" />
+          <h3>Lapis Lazuli</h3>
+          <p>Brings deep peace, harmoney and reveals inner truth, honesty,
+            compassion, self-awareness and self-expression. It is known as the
+            wisdom stone.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="lapis-lazuli">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="lapis-lazuli" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-lapis-lazuli">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-red-garnet">
+          <img src="./images/stones/red-garnet-300x300.jpg" alt="Photo of red garnet stones" />
+          <h3>Red Garnet</h3>
+          <p>Represents love and commitment. Enhances sexuality, bringing
+            warmth, devotion, understanding, trust and honesty to a
+            relationship.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="red-garnet">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="red-garnet" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-red-garnet">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-red-jasper">
+          <img src="./images/stones/red-japser-300x300.jpg" alt="Photo of red jasper" />
+          <h3>Red Jasper</h3>
+          <p>Known as the supreme nurturer it supports and sustains during times
+            of stress and brings tranquility and wholeness
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="red-jasper">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="red-jasper" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-red-jasper">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-rose-quartz">
+          <img src="./images/stones/rose-quartz-300x300.jpg" alt="Photo of rose quartz stones" />
+          <h3>Rose quartz</h3>
+          <p>Known as the crystal of unconditional love. It boosts feelings of
+            self-love and foster loving relationships with others.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="rose-quartz">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="rose-quartz" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-rose-quartz">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-shungite">
+          <img src="./images/stones/shungite-300x300.jpg" alt="Photo of shungite stones" />
+          <h3>Shungite</h3>
+          <p>A powerful purification stone. Called the miracle stone because its
+            a catalyst for growth, transformation and positive change.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="shungite">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="shungite" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-shungite">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-smoky-quartz">
+          <img src="./images/stones/smokey-quartz-300x300.jpg" alt="Photo of smokey quartz stones" />
+          <h3>Smoky Quartz</h3>
+          <p>Assists to release old patterns of thought and behaviour. It is
+            known to draw energy from the crown chakra to the root chakra
+            helping to ground you.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="smoky-quartz">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="smoky-quartz" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-smoky-quartz">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-sodalite">
+          <img src="./images/stones/sodalite-300x300.jpg" alt="Photo of sodalite stones" />
+          <h3>Sodalite</h3>
+          <p>Brings order and calmness to the mind. It encourages rational
+            thought, objectivity, truth and intuition. It is also known to calm
+            panic attacks.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="sodalite">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="sodalite" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-sodalite">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-sunstone">
+          <img src="./images/stones/sunstone-300x300.jpg" alt="Photo of sunstone stones" />
+          <h3>Sunstone</h3>
+          <p>Stone of leadership, encouraging the wearer to be open, benefolent
+            and willing to bestow blessings onto others. It is also knows as the
+            stone of joy.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="sunstone">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="sunstone" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-sunstone">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-tigers-eye">
+          <img src="./images/stones/tigers-eye-300x300.jpg" alt="Photo of tigers eye stones" />
+          <h3>Tigers Eye</h3>
+          <p>Represents the power, courage and fearlessness of the tiger. It is
+            the stone of courage, power and protection.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="tigers-eye">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="tigers-eye" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-tigers-eye">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" id="save-white-howlite">
+          <img src="./images/stones/white-howlite-300x300.jpg" alt="Photo of white howlite stones" />
+          <h3>White howlite</h3>
+          <p>Strengthens memory and stimulates desire for knowledge. It teaches
+            patience and eliminate rage, pain and stress.
+          </p>
+          <div class="icons">
+            <div class="image-swap" data-like="white-howlite">
+              <i class="fa fa-heart-o like-icon" title="Like"></i>
+              <i id="white-howlite" class="fa fa-heart unlike-icon transparent" title="Unlike"></i>
+            </div>
+            <div class="save-icon">
+              <div data-save="save-white-howlite">
+                <i class="fa fa-opencart save-icon" title="Save for later"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4 class="credits">Image credits and additional information:</h4>
+      <!-- This unordered list contains links to two external websites which were used for the images and information on each stone. The heading above is indicative of that. -->
+      <ul class="external-links">
+        <li><a href="https://helloindigohalo.co.za/" target="_blank">Hello Indigo Halo</a></li>
+        <li><a href="https://crystalspirits.co.za/" target="_blank">Crystal Spirits</a></li>
+      </ul>
+    </main>
+
+    <footer>
+      <!-- The social media icon section with icons from Line Awesome -->
+      <div class="social-media-icons" id="social">
+        <a href="https://facebook.com/johann.vanvuuren.167" target="_blank" class="social-media-link">
+          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook Icon" />
+        </a>
+        <a href="https://www.instagram.com/_techno_mage" target="_blank" class="social-media-link">
+          <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" alt="Instagram Icon" />
+        </a>
+        <a href="https://twitter.com/KomtMage" target="_blank" class="social-media-link">
+          <img src="https://img.icons8.com/fluency/48/000000/twitter.png" alt="Twitter Icon" />
+        </a>
+        <a href="https://icons8.com/icon/5MQ0gPAYYx7a/twitter" class="icon-credit">Social Media Icons by Icons8</a>
+      </div>
+      <!-- The copyright clause -->
+      <div class="copyright">
+        Copyright &copy; 2022 Johann J van Vuuren. All rights reserved.
+      </div>
+      <!-- The footer navigation stack using an unordered list. -->
+      <div class="footer-nav">
+        <ul>
+          <li>
+            <a href="./index.html#home">Home</a>
+          </li>
+          <li>
+            <a href="./index.html#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="./index.html#inspiration">Inspiration</a>
+          </li>
+          <li>
+            <a href="./index.html#chakras">The Chakras</a>
+          </li>
+          <li>
+            <a href="./index.html#social">Social Media Links</a>
+          </li>
+          <li>
+            <a href="./stone-selection.html">Selected Stones</a>
+          </li>
+          <li>
+            <a href="./contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Vanilla JavaScript script for the dynamic insertion of saved items above -->
+    <script src="./js/dynamic-insert.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,149 @@
+//Re-used throughout website
+h2 {
+  //Mixin for background-clip used throughout site
+  @include text-clip($font-bold-lg, $font-size-md);
+  padding-top: 5rem;
+  text-align: center;
+}
+
+//Re-use throughout the website
+h3 {
+  @include text-clip($font-bold-lg, $font-size-sm);
+  
+}
+
+//Re-used throughout website
+h4 {
+  @include text-clip($font-bold-lg, $font-size-normal);
+}
+
+//Header excluding fixed navigation bar (coded seperately)
+.header {
+  backface-visibility: hidden;
+
+  //Centering the primary heading
+  div {
+    text-align: center;
+  }
+
+  h1 {
+    @include text-clip($font-bold-lg, $font-size-lg);
+    /* Positioning in preperation of a slide in from above animation */
+    animation: moveInTop 4s ease-out;
+    left: 50%;
+    position: absolute;
+    top: 30%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* In preperation of seperate positionings of the two paragraph for two animations. Slide in from left and slide in from right */
+  p {
+    position: absolute;
+  }
+
+  .paragraph-left {
+    @include text-clip($font-bold-lg, $font-size-sm);
+    animation: moveInLeft 4s ease-out;
+    left: 50%;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Media query (via mixin) for screens smaller than a tablet landscape */
+    @include respond(tab-land) {
+      @include text-clip($font-bold-lg, $font-size-xxs);
+    }
+  }
+
+  .paragraph-right {
+    @include text-clip($font-bold-lg, $font-size-sm);
+    animation: moveInRight 4s ease-out;
+    left: 50%;
+    text-align: center;
+    top: 60%;
+    transform: translate(-50%, -50%);
+
+    @include respond(tab-land) {
+      @include text-clip($font-bold-lg, $font-size-xxs);
+    }
+
+    @include respond(phone) {
+      top: 60%;
+    }
+  }
+}
+
+.main-article {
+  p {
+    //Mixin for font styling used throughout the site
+    @include font(
+      $secondary-font,
+      $tertiary-colour,
+      $transparent,
+      $font-size-xs,
+      $font-thin-md
+    );
+    padding: 2rem;
+  }
+}
+
+.inspiration {
+  /* Inpreperation of the absolute positioning of the ::before pseudo element as well as the cite element */
+  position: relative;
+
+  blockquote {
+    @include font(
+      $secondary-font,
+      $tertiary-colour,
+      $transparent,
+      $font-size-xs,
+      $font-thin-md
+    );
+    padding: 3rem;
+
+    p {
+      padding: 2rem;
+    }
+
+    /* Use of the ::before pseudoelement to insert the stylized large quotation mark before the quoted passage under the inspiration section of the site. */
+    &::before {
+      content: '\201C';
+      font-size: $font-size-lg;
+      left: 1.5rem;
+      position: absolute;
+    }
+  }
+
+  //Styling of the citation of the quotation
+  cite {
+    @include font(
+      $secondary-font,
+      $tertiary-colour,
+      $transparent,
+      $font-size-xxs,
+      $font-thin-sm
+    );
+    position: absolute;
+    right: 10%;
+  }
+}
+
+
+.stones {
+  //Like, unlike and save icon sizes
+  i {
+    font-size: large;
+  }
+}
+
+//Styling of modal text
+.saved-modal__content {
+
+  #number-of-items {
+    letter-spacing: 0.5px;
+  }
+
+  span {
+    font-weight: $font-bold-md ;
+  }
+}

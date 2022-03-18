@@ -1,0 +1,20 @@
+//Global resets
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+//Defining 1rem = 10px for ease of use
+html {
+  font-size: 62.5%;
+}
+
+//Global properties on the body parent
+body {
+  font-family: $primary-font;
+  padding: 2rem;
+  position: relative;
+}

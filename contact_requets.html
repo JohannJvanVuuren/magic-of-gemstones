@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemstones Magic: Contact Request</title>
+    <!-- Line Awesome Icons CDN link -->
+    <link rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" />
+    <!-- Google Fonts CDN link for Lato and Meriweather fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet" />
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- jQuery CDN link via Google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Main jQuery script -->
+    <script src="./js/main.js"></script>
+  </head>
+
+  <!-- Code validated with W3C Markup Validation Service: No errors or warnings found Ref: https://validator.w3.org/#validate_by_input -->
+
+  <body>
+    <!-- The navigation, header and footer section will not be discussed since they have been described in index.html -->
+    <nav id="home">
+      <ul class="navbar">
+        <li class="navbar-item navbar-item__home">
+          <a href="index.html#home"> Home </a>
+        </li>
+        <li class="navbar-item navbar-item__introduction">
+          <a href="index.html#introduction"> Introduction </a>
+        </li>
+        <li class="navbar-item navbar-item__inspiration">
+          <a href="index.html#inspiration"> Inspiration </a>
+        </li>
+        <li class="navbar-item navbar-item__chakras">
+          <a href="index.html#chakras"> The Chakras </a>
+        </li>
+        <li class="navbar-item navbar-item__social">
+          <a href="index.html#social"> Social Media Links </a>
+        </li>
+        <li class="navbar-item navbar-item__stones">
+          <a href="stone-selection.html"> Selected Stones </a>
+        </li>
+        <li class="navbar-item navbar-item__saved">
+          <a href="saved-items.html">Saved Items</a>
+        </li>
+        <li id="contact" class="navbar-item navbar-item__contact">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Contact dropdown menu animation (see main.js) -->
+    <div id="hide-dropdown" class="dropdown">
+      <ul class="dropdown-menu">
+        <li class="dropdown-item"><a href="contact.html">Contact Request</a></li>
+        <li class="dropdown-item"><a href="comments.html">Comments</a></li>
+        <li class="dropdown-item"><a href="newsletter.html">Newsletter</a></li>
+      </ul>
+    </div>
+
+    <header class="header">
+      <!-- Credit for background image: Sevenfold-path-1024x739,jpg - https://www.infinumgrowth.com/7-chakras-enhance-lives/ -->
+      <div>
+        <h1>The magic of gemstones</h1>
+      </div>
+      <p class="paragraph-left">
+        A short journey into the history, symbolic meaning and
+      </p>
+      <p class="paragraph-right">
+        healing properties of gemstones.
+      </p>
+    </header>
+
+    <!-- This section is the basic "contact us" form with a submit button -->
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <form action="mailto:vanvuurenjohann124@gmail.com" enctype="text/plain" method="post" class="contact-form">
+        <!-- Referred to  MDN Web Docs for form handling and styling: https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms-->
+        <!-- The gathering of the full name -->
+        <div class="fullname">
+          <label for="fname">Full Name</label>
+          <input type="text" name="fname" id="fname" placeholder="E.g., John Smith" required />
+        </div>
+        <!-- The gathering of the email address -->
+        <div class="email">
+          <label for="mail">Email Address</label>
+          <input type="email" name="mail" id="mail" placeholder="E.g., jsmith@domain.com" required/>
+        </div>
+        <!-- The gathering of the cell phone number -->
+        <div class="cellphone">
+          <label for="cell">Cellphone Number</label>
+          <input type="tel" name="cell" id="cell" placeholder="E.g., 555 803 1234">
+        </div>
+        <!-- The submit button for the "contact us" section of the page -->
+        <div class="button">
+          <button id="btn-submit" type="submit">Submit</button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <!-- The social media icon section with icons from Line Awesome -->
+      <div class="social-media-icons" id="social">
+        <a href="https://facebook.com/johann.vanvuuren.167" target="_blank" class="social-media-link">
+          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook Icon" />
+        </a>
+        <a href="https://www.instagram.com/_techno_mage" target="_blank" class="social-media-link">
+          <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" alt="Instagram Icon" />
+        </a>
+        <a href="https://twitter.com/KomtMage" target="_blank" class="social-media-link">
+          <img src="https://img.icons8.com/fluency/48/000000/twitter.png" alt="Twitter Icon" />
+        </a>
+        <a href="https://icons8.com/icon/5MQ0gPAYYx7a/twitter" class="icon-credit">Social Media Icons by Icons8</a>
+      </div>
+      <!-- The copyright clause -->
+      <div class="copyright">
+        Copyright &copy; 2022 Johann J van Vuuren. All rights reserved.
+      </div>
+      <!-- The footer navigation stack using an unordered list. -->
+      <div class="footer-nav">
+        <ul>
+          <li>
+            <a href="./index.html#home">Home</a>
+          </li>
+          <li>
+            <a href="./index.html#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="./index.html#inspiration">Inspiration</a>
+          </li>
+          <li>
+            <a href="./index.html#chakras">The Chakras</a>
+          </li>
+          <li>
+            <a href="./index.html#social">Social Media Links</a>
+          </li>
+          <li>
+            <a href="stone-selection.html">Selected Stones</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

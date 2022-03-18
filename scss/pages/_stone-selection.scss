@@ -1,0 +1,30 @@
+/* Styling of the credits and the two external links on the bottom of the stone selection page */
+a,
+.credits {
+  @include font(
+    $primary-font,
+    $tertiary-colour,
+    $transparent,
+    $font-size-xxs,
+    $font-thin-md
+  );
+  text-align: center;
+}
+
+/* Styling of the external links specifically with a better looking underline than a normal link */
+.external-links {
+  list-style: none;
+  text-align: center;
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  a {
+    border-bottom: 2px solid $tertiary-colour;
+    display: inline-block;
+    font-weight: $font-bold-lg;
+    padding-bottom: 3px;
+    text-decoration: none;
+  }
+}

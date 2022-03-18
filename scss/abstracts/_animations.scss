@@ -1,0 +1,42 @@
+/* Animation of text sliding in on header */
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50rem);
+  }
+  80% {
+    transform: translate(-50%, -1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100rem, -50%);
+  }
+  80% {
+    transform: translate(-1rem, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translate(100rem, 50%);
+  }
+  80% {
+    transform: translate(-50rem, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

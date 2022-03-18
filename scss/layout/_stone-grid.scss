@@ -1,0 +1,81 @@
+/* Using CSS grid to layout the cards that are displayed on the selected stones page of the site. Three media queries are used for responsive re-stacking on bigger and smaller than normal screens */
+.stones-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 5rem auto 5rem auto;
+  max-width: 180rem;
+
+  @include respond(big-desktop) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include respond(tab-land) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+  }
+
+  /* Styling the cards using CSS grid and grid-template-areas to aid in the spacing of the three elements on each card*/
+  .card {
+    //Layout of cards
+    border: 1px solid $primary-colour-shade2;
+    box-shadow: 0px 1px 4px $primary-colour-shade1;
+    display: grid;
+    grid-template-areas:
+      'image heading'
+      'image paragraph'
+      'image icons';
+    justify-self: center;
+    padding: 1rem;
+    transition: all 1s;
+
+    //Spacing and layout of the image on each card
+    img {
+      grid-area: image;
+      height: auto;
+      padding: 1rem;
+      width: 15rem;
+    }
+
+    /* Styling and layout of the heading of each card */
+    h3 {
+      @include font(
+        $primary-font,
+        $tertiary-colour,
+        $transparent,
+        $font-size-xxs,
+        $font-bold-md
+      );
+      align-self: flex-start;
+      grid-area: heading;
+      text-transform: uppercase;
+    }
+
+    /* Styling and layout of the descriptive text of each card */
+    h4 {
+      @include font(
+          $secondary-font,
+          $primary-colour,
+          $transparent,
+          $font-size-normal,
+          $font-thin-md
+        );
+        align-self: flex-start;
+      grid-area: paragraph;
+    }
+
+    /* Special effect (lifting up) when the user hovers the mouse over a card */
+    &:hover {
+      transform: scale(1.06);
+    }
+
+    .icons {
+      grid-area: icons;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
